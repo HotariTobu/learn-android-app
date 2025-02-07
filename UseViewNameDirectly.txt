@@ -1,0 +1,11 @@
+build.gradle
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+
+
+MainActivity.kt
+import kotlinx.android.synthetic.main.activity_main.*

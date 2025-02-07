@@ -1,0 +1,26 @@
+build.gradle
+
+android {
+    sourceSets {
+        main {
+            scan(file('src/main/res'))
+        }
+    }
+}
+
+def scan(f) {
+    f.listFiles()
+            .each {
+                if (it.isDirectory()) {
+                    def path = it.path
+                    android {
+                        sourceSets {
+                            main {
+                                res.srcDirs += path
+                            }
+                        }
+                    }
+                    scan(it)
+                }
+            }
+}
